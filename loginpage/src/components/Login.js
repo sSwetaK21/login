@@ -91,16 +91,16 @@ import React, {useState} from 'react';
          <>
              {
                  loggedInUser ? 
-                 <>
-                     <h1>Hello, {loggedInUser['userName']}</h1>
-                     <button onClick={handleLogout}>Log Out</button>
-                 </>
+                 <div>
+                     <h1 className='loginTXt'>Hello, {loggedInUser['userName']}</h1>
+                     <button onClick={handleLogout} className="logoutbtn">Log Out</button>
+                 </div>
                  :
                  <form method='POST'>
-                 <label htmlFor="username">Username</label>
+                 <label htmlFor="username">Username :</label>
                  <input name="username" id="username" type="text" onChange={(e) => validateAndSetUserName(e)}  />
                  <br/>
-                 <label htmlFor="password">Password</label>
+                 <label htmlFor="password">Password :</label>
                  <input name="password" type="password" id="password" onChange={(e) => validateAndSetPassword(e.target.value)}  />
                  <br/>
                  <button type="submit" onClick={handleSubmit} disabled={userName.length === 0 || password.length === 0} >Login</button>
